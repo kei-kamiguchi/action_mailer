@@ -44,12 +44,16 @@ ContactMailer.contact_mail(@contact).deliver
 ```
 $ heroku addons:create sendgrid:starter
 ```
-2. [config/environments/production.rb]に以下を追記
+2. ドメインの確認(~.herokuapp.comがドメイン)
+```
+$ heroku domains
+```
+3. [config/environments/production.rb]に以下を追記
 ```
 Rails.application.configure do
   # 省略
   # 追記
-  config.action_mailer.default_url_options = { host: 'hogehoge-fugafuga.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'アプリのドメイン' }
   ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
     user_name: ENV['SENDGRID_USERNAME'],
@@ -62,7 +66,7 @@ Rails.application.configure do
   }
 end
 ```
-3. SendGridのUSERNAMEとPASSWORDを、Heroku上に環境変数として設定
+4. SendGridのUSERNAMEとPASSWORDを、Heroku上に環境変数として設定
 ```
 $ heroku config:get SENDGRID_USERNAME
 # USERNAMEが表示される
@@ -72,8 +76,8 @@ $ heroku config:get SENDGRID_PASSWORD
 $ heroku config:set SENDGRID_USERNAME="取得したSENDGRID_USERNAME"
 $ heroku config:set SENDGRID_PASSWORD="取得したSENDGRID_PASSWORD"
 ```
-4. コミットする
-5. herokuにpush
+5. コミットする
+6. herokuにpush
 ```
 $ git push heroku master 
 ```
