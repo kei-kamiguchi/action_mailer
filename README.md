@@ -62,6 +62,16 @@ Rails.application.configure do
   }
 end
 ```
+3. SendGridのUSERNAMEとPASSWORDを、Heroku上に環境変数として設定
+```
+$ heroku config:get SENDGRID_USERNAME
+# USERNAMEが表示される
+$ heroku config:get SENDGRID_PASSWORD
+# PASSWORDが表示される
+
+$ heroku config:set SENDGRID_USERNAME="取得したSENDGRID_USERNAME"
+$ heroku config:set SENDGRID_PASSWORD="取得したSENDGRID_PASSWORD"
+```
 4. コミットする
 5. herokuにpush
 ```
