@@ -115,6 +115,32 @@ $ heroku addons:create sendgrid:starter
 https://diver.diveintocode.jp/questions/3895
 
 
-##sendgridにログイン
+##sendgridへの解除依頼
 `heroku config`の`SENDGRID_PASSWORD`と`SENDGRID_USERNAME`の内容で以下のurlからログイン
 https://app.sendgrid.com/login
+
+1.画面右下のSupportをクリック
+
+2.Contact Supprtをクリック
+
+3.「suspended」と入力し「Continue」をクリック
+
+4.画面下の「Open a Support Request」をクリック
+
+5.入力画面が出るので、以下のように入力。
+「Subject」
+Request for unfreezing account
+
+「Description」
+Hello, SendGrid Support Team
+
+This is ご自身のお名前 from Japan.
+I am using SendGrid for my Web application with Heroku add on now.
+But somehow my account has been suspended.
+I am not sure why it happened.
+Could you please suggest any solutions or tell me why my account has been suspended?
+I appreciate your help in advance.
+　
+Thanks,
+
+6.Submitをクリックして完了です。メールでの返答を待ちましょう。
