@@ -113,3 +113,8 @@ mount LetterOpenerWeb::Engine, at: "/letter_opener"
 $ heroku addons:create sendgrid:starter
 ```
 https://diver.diveintocode.jp/questions/3895
+
+
+##sendgridにログイン
+`heroku config`の`SENDGRID_PASSWORD`と`SENDGRID_USERNAME`の内容で以下のurlからログイン
+https://app.sendgrid.com/login
