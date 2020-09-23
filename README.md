@@ -128,6 +128,7 @@ https://app.sendgrid.com/login
 4.画面下の「Open a Support Request」をクリック
 
 5.入力画面が出るので、以下のように入力。
+
 「Subject」
 Request for unfreezing account
 
