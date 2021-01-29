@@ -102,7 +102,7 @@ SendGridから「Welcome to SendGrid! Confirm Your Email」というタイトル
 
 [![Image from Gyazo](https://t.gyazo.com/teams/diveintocode/4f27ca2a845f1ff262e8a24ef3327783.png)](https://diveintocode.gyazo.com/4f27ca2a845f1ff262e8a24ef3327783)
 
-アカウント登録フォームが表示されますので、必須項目を入力し、「Get Started!」をクリックします。
+アカウント情報入力画面が表示されますので、必須項目を入力し、「Get Started!」をクリックします。
 
 [![Image from Gyazo](https://t.gyazo.com/teams/diveintocode/f7e5ccf931a5730d758ee8f25a1bd0cd.png)](https://diveintocode.gyazo.com/f7e5ccf931a5730d758ee8f25a1bd0cd)
 
