@@ -110,7 +110,7 @@ SendGridから「Welcome to SendGrid! Confirm Your Email」というタイトル
 
 [![Image from Gyazo](https://t.gyazo.com/teams/diveintocode/5fc3aa877fc8232be12cd2425f284f24.png)](https://diveintocode.gyazo.com/5fc3aa877fc8232be12cd2425f284f24)
 
-### 3. メールの差出人情報の登録
+### 4. メールの差出人情報の登録
 
 続いて、SendGridのメール機能を使用する上で必要となる、差出人情報の登録を行なっていきます。
 差出人情報とはメールの送信元となるユーザ情報を指します。
