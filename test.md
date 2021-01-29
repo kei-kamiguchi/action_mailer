@@ -88,57 +88,38 @@ opening an ticket.
 
 ここから下は、addonsが成功したという前提で進めていきます。
 
-### 3. SendGridの設定
+### 3. SendGridのアカウント登録
 
-ここからは、SendGridを使ったメール機能を利用するための登録作業を行なっていきます。
-以下のコマンドを実行し、SendGridのブラウザにアクセスします。
+[SendGridのホームページ](https://sendgrid.com/pricing/)にアクセスし、「Start for free」をクリックします。
 
-```
-$ heroku addons:open sendgrid
-```
+[![Image from Gyazo](https://t.gyazo.com/teams/diveintocode/19d058f71ed374f9d625fdcdc5258b2f.png)](https://diveintocode.gyazo.com/19d058f71ed374f9d625fdcdc5258b2f)
 
-Windowsの場合は、以下のコマンドを実行せず、[Sendgridのログイン画面](https://app.sendgrid.com/login) にアクセスし、SendGridのUSERNAMEとPASSWORDでログインしてください。
-SendGridのUSERNAMEとPASSWORDは、以下のコマンドを実行することで確認できます。
+以下の画面が表示されるので、メールアドレスとパスワードを入力します。"私はロボットではありません"と"I accept the Terms of Service and have read the Services Privact Policy"にチェックを入れ、「Create Account」をクリックします。
 
-```
-$ heroku config:get SENDGRID_USERNAME
-# USERNAMEが表示される
-$ heroku config:get SENDGRID_PASSWORD
-# PASSWORDが表示される
-```
+[![Image from Gyazo](https://t.gyazo.com/teams/diveintocode/5784ac351d6d45accfa9e14b848550aa.png)](https://diveintocode.gyazo.com/5784ac351d6d45accfa9e14b848550aa)
 
-ブラウザが起動し、下のようなダイアログが表示されます。自身の有効なメールアドレスを入力し、「Send Confirmation Email」をクリックします。
-
-[![Image from Gyazo](https://t.gyazo.com/teams/diveintocode/e66e24012057b3bef437153d17fa2766.png)](https://diveintocode.gyazo.com/e66e24012057b3bef437153d17fa2766)
-
-SendGridから「Please confirm your email address」というタイトルのメールが届くので、「Confirm Email Address」をクリックします。
+SendGridから「Welcome to SendGrid! Confirm Your Email」というタイトルのメールが届くので、「Confirm Email Address」をクリックします。
 
 [![Image from Gyazo](https://t.gyazo.com/teams/diveintocode/4f27ca2a845f1ff262e8a24ef3327783.png)](https://diveintocode.gyazo.com/4f27ca2a845f1ff262e8a24ef3327783)
 
-以下のようなエラー画面が表示される場合は、しばらく時間を空けてから再度「Confirm Email Address」をクリックしてください。
+アカウント登録フォームが表示されますので、必須項目を入力し、「Get Started!」をクリックします。
 
-- 画像
+[![Image from Gyazo](https://t.gyazo.com/teams/diveintocode/f7e5ccf931a5730d758ee8f25a1bd0cd.png)](https://diveintocode.gyazo.com/f7e5ccf931a5730d758ee8f25a1bd0cd)
 
-すると再び、SendGridのダッシュボードが表示されます。Sendgridを利用するために最初にユーザ情報（メールの差出人情報）を登録する必要があります。「Create a Single Sender」をクリックします。
+以下のように、ダッシュボードが表示されればアカウント登録完了です。
 
 [![Image from Gyazo](https://t.gyazo.com/teams/diveintocode/5fc3aa877fc8232be12cd2425f284f24.png)](https://diveintocode.gyazo.com/5fc3aa877fc8232be12cd2425f284f24)
 
-以下の画面が表示されるので、「Next」をクリックします。
-[![Image from Gyazo](https://t.gyazo.com/teams/diveintocode/e5219797ef02c7c4cac1d211cc731c51.png)](https://diveintocode.gyazo.com/e5219797ef02c7c4cac1d211cc731c51)
+### 3. メールの差出人情報の登録
 
-Contry CodeはJapan（+81）を選択し、携帯の番号を入力し、「Next」をクリックします。
-[![Image from Gyazo](https://t.gyazo.com/teams/diveintocode/7b8548ed28d58f0d9e075c3d9bb160f2.png)](https://diveintocode.gyazo.com/7b8548ed28d58f0d9e075c3d9bb160f2)
+続いて、SendGridのメール機能を使用する上で必要となる、差出人情報の登録を行なっていきます。
+差出人情報とはメールの送信元となるユーザ情報を指します。
 
-携帯に送られてきたセキュリティコードを入力し、「Save」をクリックします。
-[![Image from Gyazo](https://t.gyazo.com/teams/diveintocode/6b33dc92a2ea35c629a86ef334f287e8.png)](https://diveintocode.gyazo.com/6b33dc92a2ea35c629a86ef334f287e8)
+画面の中央に表示されている、「Create a Single Sender」をクリックします。
 
-「Go to login」をクリックします。
-[![Image from Gyazo](https://t.gyazo.com/teams/diveintocode/c407a9a93b5f25796f3743210b836278.png)](https://diveintocode.gyazo.com/c407a9a93b5f25796f3743210b836278)
+[![Image from Gyazo](https://t.gyazo.com/teams/diveintocode/5fc3aa877fc8232be12cd2425f284f24.png)](https://diveintocode.gyazo.com/5fc3aa877fc8232be12cd2425f284f24)
 
-再度送られてきたセキュリティコードを入力し、「Continue」をクリックします。
-[![Image from Gyazo](https://t.gyazo.com/teams/diveintocode/51812fd8ddf637770b585cf1d17683c4.png)](https://diveintocode.gyazo.com/51812fd8ddf637770b585cf1d17683c4)
-
-続いて、ユーザ情報（メールの差出人情報）の登録フォームが表示されるので、画像例を参考に入力してください。
+登録フォームが表示されるので、画像例を参考に入力してください。
 [参考リンク](https://sendgrid.kke.co.jp/docs/Tutorials/B_Marketing_Mail/marketing_campaigns1.html)
 ＊ 参考リンクをもとに後ほど編集を行う
 
@@ -148,7 +129,7 @@ Contry CodeはJapan（+81）を選択し、携帯の番号を入力し、「Next
 
 入力が完了したら「Create」をクリックします。
 
-しばらくするとSendGridから「Please Verify Your Sender Identity」というタイトルのメールが届くので、「Verify Sender Identity」をクリックします
+SendGridから「Please Verify Your Sender Identity」というタイトルのメールが届くので、「Verify Sender Identity」をクリックします
 
 [![Image from Gyazo](https://t.gyazo.com/teams/diveintocode/d6c3e9c6181b63e02a3ebe2dde6f32bc.png)](https://diveintocode.gyazo.com/d6c3e9c6181b63e02a3ebe2dde6f32bc)
 
